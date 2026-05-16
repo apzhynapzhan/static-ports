@@ -1,7 +1,7 @@
 #!/bin/sh
 set -e
 export PATH="$HOME/staticlinux/toolchain/bin:$PATH"
-VERSION="1.3.1"
+VERSION="1.3.2"
 wget https://zlib.net/zlib-$VERSION.tar.gz
 tar xf zlib-$VERSION.tar.gz
 cd zlib-$VERSION
