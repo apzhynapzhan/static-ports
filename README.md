@@ -1,4 +1,4 @@
-# static-portsa
+# static-ports
 
 Package recipes for Static Linux.
 
