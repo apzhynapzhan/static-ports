@@ -8,9 +8,7 @@ each port lives in a category directory:
 
 ```
 category/name/
-
   build.sh    - builds the package from source
-  
   pkg.toml    - package metadata
 ```
 
