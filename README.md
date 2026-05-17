@@ -6,19 +6,21 @@ Package recipes for Static Linux.
 
 each port lives in a category directory:
 
-\```
+```
 category/name/
-  build.sh    — builds the package from source
-  pkg.toml    — package metadata
-\```
+
+  build.sh    - builds the package from source
+  
+  pkg.toml    - package metadata
+```
 
 ## Building
 
 use hephaestus to build a port:
 
-\```
+```
 python3 hephaestus.py static-ports/shells/dash
-\```
+```
 
 ## Adding a port
 
