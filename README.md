@@ -1,28 +1,46 @@
 # static-ports
-
 Package recipes for Static Linux.
 
 ## Structure
-
-each port lives in a category directory:
-
+Each port lives in a category directory:
 ```
 category/name/
-  build.sh    - builds the package from source
-  pkg.toml    - package metadata
+  name.scheme  - package metadata and build instructions
 ```
 
 ## Building
-
-use hephaestus to build a port:
-
+Use ace to install a port:
 ```
-python3 hephaestus.py static-ports/shells/dash
+ace install category/name
 ```
 
 ## Adding a port
+1. Create a directory under the right category
+2. Write `name.scheme` using the package DSL
+3. Test with `ace install`
+4. Submit a PR
 
-1. create a directory under the right category
-2. write `build.sh` and `pkg.toml`
-3. test with hephaestus
-4. submit a PR
+## Port format
+```scheme
+(package
+  (name "example")
+  (version "1.0.0")
+  (category "utils")
+  (description "an example port")
+  (source "https://example.com/example-1.0.0.tar.gz")
+  (sha256 "...")
+  (binary "example-1.0.0/example")
+  (install "/usr/bin/example")
+  (build
+    (env "CC" "x86_64-linux-musl-gcc")
+    (run "./configure" "--prefix=/usr")
+    (make)))
+```
+
+### Build DSL
+| Form | Description |
+|------|-------------|
+| `(env "KEY" "val")` | Set an environment variable |
+| `(run "cmd" "arg" ...)` | Run a command |
+| `(make)` | Run make with -jN |
+| `(make "target")` | Run make with a specific target |
