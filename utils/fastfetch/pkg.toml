@@ -1,6 +1,0 @@
-[pkg]
-name = "fastfetch"
-version = "2.63.1"
-description = "a maintained, feature-rich and performance oriented, neofetch like system information tool. "
-binary = "fastfetch-2.63.1/fastfetch"
-install = "/usr/bin/fastfetch"

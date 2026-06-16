@@ -1,7 +1,0 @@
-[pkg]
-name = "openssl"
-version = "3.5.0"
-description = "cryptography library"
-binary = "openssl-3.5.0/apps/openssl"
-install = "/usr/bin/openssl"
-skip_strip = false

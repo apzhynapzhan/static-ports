@@ -1,6 +1,0 @@
-[pkg]
-name = "git"
-version = "2.49.0"
-description = "version control system"
-binary = "git-2.49.0/git"
-install = "/usr/bin/git"

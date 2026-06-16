@@ -1,8 +1,0 @@
-[pkg]
-name = "curl"
-version = "8.7.1"
-source = "https://curl.se/download/curl-8.7.1.tar.gz"
-sha256 = "b813970e95477c23b88dc56bb54c4bce17d79ef9a030ec0b43c4d982f58ab7a8"
-binary = "curl-8.7.1/src/curl"
-install = "/usr/bin"
-category = "net"

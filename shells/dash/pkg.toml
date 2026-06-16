@@ -1,7 +1,0 @@
-[pkg]
-name = "dash"
-version = "0.5.12"
-description = "minimal POSIX shell"
-source = "http://gondor.apana.org.au/~herbert/dash/files/dash-0.5.12.tar.gz"
-binary = "dash-0.5.12/src/dash"
-install = "/usr/bin/dash"

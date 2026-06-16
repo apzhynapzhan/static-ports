@@ -1,0 +1,15 @@
+(package
+  (name "dash")
+  (version "0.5.12")
+  (category "shells")
+  (description "minimal POSIX shell")
+  (source "http://gondor.apana.org.au/~herbert/dash/files/dash-0.5.12.tar.gz")
+  (sha256 "")
+  (binary "dash-0.5.12/src/dash")
+  (install "/usr/bin/dash")
+  (build
+    (env "CC" "x86_64-linux-musl-gcc")
+    (run "./configure"
+         "--host=x86_64-linux-musl"
+         "--enable-static")
+    (make)))

@@ -1,0 +1,22 @@
+(package
+  (name "git")
+  (version "2.49.0")
+  (category "devel")
+  (description "fast, scalable, distributed revision control system")
+  (source "https://www.kernel.org/pub/software/scm/git/git-2.49.0.tar.gz")
+  (sha256 "d9a07f5daa9b95b8fe838e63c900b68e33c97a78764da0033e5f4e69fd46f8e4")
+  (binary "git-2.49.0/git")
+  (install "/usr/bin/git")
+  (build
+    (env "CC" "x86_64-linux-musl-gcc")
+    (env "CFLAGS" "-Os -static")
+    (env "LDFLAGS" "-static")
+    (run "make" "configure")
+    (run "./configure"
+         "--prefix=/usr"
+         "--without-openssl"
+         "--without-curl"
+         "--without-expat"
+         "--without-tcltk"
+         "--without-python")
+    (make)))

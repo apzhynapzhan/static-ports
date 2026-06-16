@@ -1,0 +1,19 @@
+(package
+  (name "openssl")
+  (version "4.0.0")
+  (category "libs")
+  (description "cryptography library")
+  (source "https://github.com/openssl/openssl/releases/download/openssl-4.0.0/openssl-4.0.0.tar.gz")
+  (sha256 "")
+  (binary "openssl-4.0.0/apps/openssl")
+  (install "/usr/bin/openssl")
+  (build
+    (env "CC" "x86_64-linux-musl-gcc")
+    (run "./Configure"
+         "linux-x86_64"
+         "--cross-compile-prefix=x86_64-linux-musl-"
+         "no-shared"
+         "no-tests"
+         "--prefix=/usr"
+         "--openssldir=/etc/ssl")
+    (make)))
