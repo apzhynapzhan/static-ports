@@ -1,0 +1,12 @@
+(package ; hello, world!!!
+  (name "hello")
+  (version "1.0.0")
+  (category "utils")
+  (description "hello world")
+  (source "")
+  (sha256 "")
+  (binary "hello")
+  (install "/usr/bin/hello")
+  (build
+    (env "CC" "x86_64-linux-musl-gcc")
+    (run "sh" "-c" "echo '#include <stdio.h>\nint main(){puts(\"hello world\");return 0;}' > hello.c && x86_64-linux-musl-gcc -static -o hello hello.c")))
