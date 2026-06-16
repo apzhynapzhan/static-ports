@@ -1,6 +1,0 @@
-name = "hermes"
-version = "1.0"
-description = "updating helper for Atlas and Static Linux"
-source = "https://codeberg.org/StaticLinux/hermes.git"
-binary = "hermes/target/x86_64-unknown-linux-musl/release"
-install = "/usr/bin/hermes"

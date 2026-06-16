@@ -1,3 +1,4 @@
+[pkg]
 name = "openssl"
 version = "3.5.0"
 description = "cryptography library"

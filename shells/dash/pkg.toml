@@ -1,3 +1,4 @@
+[pkg]
 name = "dash"
 version = "0.5.12"
 description = "minimal POSIX shell"
