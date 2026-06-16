@@ -1,0 +1,15 @@
+(package
+  (name "recount")
+  (version "1.0.0")
+  (category "utils")
+  (description "StaticLinux package updater")
+  (source "https://codeberg.org/StaticLinux/recount/releases/download/v1.0.0/recount-1.0.0.tar.xz")
+  (sha256 "a6e8745706eba4ca77cc4aeb1c7ae11d898d29a4a7d82378413a494e9d832316")
+  (binary "recount/build/recount")
+  (install "/usr/bin/recount")
+  (build
+    (env "CC" "x86_64-linux-musl-gcc")
+    (run "meson" "setup" "build"
+         "--buildtype=release"
+         "-Db_staticpic=false")
+    (run "meson" "compile" "-C" "build")))
