@@ -1,0 +1,20 @@
+(package
+  (name "squashfs-tools")
+  (version "4.6.1")
+  (category "base")
+  (description "tools to create and extract squashfs filesystems")
+  (source "https://github.com/plougher/squashfs-tools/archive/refs/tags/4.6.1.tar.gz")
+  (sha256 "94201754b36121b6ae0a9f2aa2423ec5c96cb468f4576d7d369e68b671d863b1")
+  (binary "squashfs-tools-4.6.1/squashfs-tools/unsquashfs")
+  (install "/usr/bin/unsquashfs")
+  (nostrip #f)
+  (build
+    (env "CC" "x86_64-linux-musl-gcc")
+    (env "CFLAGS" "-static")
+    (env "LDFLAGS" "-static -lz -llzma -lzstd -llz4 -lpthread")
+    (run "make" "-C" "squashfs-tools-4.6.1/squashfs-tools"
+         "CC=x86_64-linux-musl-gcc"
+         "ZLIB_SUPPORT=1"
+         "XZ_SUPPORT=1"
+         "ZSTD_SUPPORT=1"
+         "LZ4_SUPPORT=1")))
