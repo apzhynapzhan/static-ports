@@ -21,6 +21,9 @@ ace install category/name
 4. Submit a PR
 
 ## Port format
+
+**More info in [the DSL's repo](https://codeberg.org/StaticLinux/scheme)**
+
 ```scheme
 (package
   (name "example")
