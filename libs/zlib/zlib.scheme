@@ -1,0 +1,15 @@
+(package
+  (name "zlib")
+  (version "1.3.2")
+  (category "libs")
+  (description "massively spiffy yet delicately unobtrusive compression library")
+  (source "https://zlib.net/zlib-1.3.2.tar.gz")
+  (sha256 "bb329a0a2cd0274d05519d61c667c062e06990d72e125ee2dfa8de64f0119d16")
+  (binary "zlib-1.3.2/libz.a")
+  (install "/usr/lib/libz.a")
+  (nostrip #t)
+
+  (build
+    (env "CC" "x86_64-linux-musl-gcc")
+    (run "./configure" "--static" "--prefix=/usr")
+    (make)))
