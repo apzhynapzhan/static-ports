@@ -1,0 +1,21 @@
+(package
+  (name "python")
+  (version "3.13.3")
+  (category "devel")
+  (description "Python programming language interpreter")
+  (source "https://www.python.org/ftp/python/3.13.3/Python-3.13.3.tar.xz")
+  (sha256 "")
+  (binary "Python-3.13.3/python")
+  (install "/usr/bin/python3")
+  (nostrip #f)
+  (build
+    (env "CC" "x86_64-linux-musl-gcc")
+    (env "CFLAGS" "-static -Os")
+    (env "LDFLAGS" "-static")
+    (run "./configure"
+         "--host=x86_64-linux-musl"
+         "--prefix=/usr"
+         "--disable-shared"
+         "--without-ensurepip"
+         "--with-static-libpython")
+    (make)))
