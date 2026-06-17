@@ -1,0 +1,19 @@
+(package
+  (name "iwctl")
+  (version "3.9")
+  (category "net")
+  (description "iwd command line client")
+  (source "https://www.kernel.org/pub/linux/network/wireless/iwd-3.9.tar.xz")
+  (sha256 "0cd7dc9b32b9d6809a4a5e5d063b5c5fd279f5ad3a0bf03d7799da66df5cad45")
+  (binary "client/iwctl")
+  (install "/usr/bin/iwctl")
+  (build
+    (env "CC" "clang")
+    (env "CFLAGS" "-Os")
+    (env "LDFLAGS" "-static")
+    (run "./configure"
+         "--prefix=/usr"
+         "--disable-manual-pages"
+         "--disable-readline"
+         "--disable-dbus")
+    (make "client/iwctl")))
