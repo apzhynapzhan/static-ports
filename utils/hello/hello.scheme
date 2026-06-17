@@ -8,5 +8,7 @@
   (binary "hello")
   (install "/usr/bin/hello")
   (build
-    (env "CC" "x86_64-linux-musl-gcc")
-    (run "sh" "-c" "echo '#include <stdio.h>\nint main(){puts(\"hello world\");return 0;}' > hello.c && x86_64-linux-musl-gcc -static -o hello hello.c")))
+  (env "CC" "clang")
+  (run "sh" "-c"
+    "echo '#include <stdio.h>\nint main(){puts(\"hello world\");return 0;}' > hello.c && \
+     clang --target=x86_64-linux-musl -static -o hello hello.c"))
