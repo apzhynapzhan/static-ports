@@ -1,0 +1,16 @@
+(package
+  (name "ell")
+  (version "0.74")
+  (category "devel")
+  (description "Embedded Linux Library, companion to iwd")
+  (source "https://www.kernel.org/pub/linux/libs/ell/ell-0.74.tar.xz")
+  (sha256 "f1690913024f80fafff19ecf010accb58a56784d78937bae536c016b8276bb75")
+  (build
+    (env "CC" "clang")
+    (env "CFLAGS" "-Os")
+    (run "./configure"
+         "--prefix=/usr"
+         "--disable-shared"
+         "--enable-static")
+    (make)
+    (make "install")))
