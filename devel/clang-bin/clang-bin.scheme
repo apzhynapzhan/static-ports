@@ -1,5 +1,5 @@
 (package
-  (name "clang")
+  (name "clang-dist")
   (version "1.0.0")
   (category "devel")
   (description "clang/lld toolchain for static linux")
