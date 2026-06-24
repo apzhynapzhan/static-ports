@@ -4,7 +4,7 @@
   (category "devel")
   (description "zig toolchain and C compiler frontend (prebuilt)")
   (source "https://ziglang.org/download/0.14.0/zig-linux-x86_64-0.14.0.tar.xz")
-  (sha256 "")
+  (sha256 "473ec26806133cf4d1918caf1a410f8403a13d979726a9045b421b685031a982")
   (binary "zig")
   (install "/usr/bin/zig")
   (nostrip #t)
