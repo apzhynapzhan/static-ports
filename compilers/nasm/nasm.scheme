@@ -1,0 +1,26 @@
+(package
+  (name        "nasm")
+  (version     "3.01")
+  (category    "compilers")
+  (description "Netwide Assembler - portable x86/x86-64 assembler with Intel syntax")
+
+  (source  "https://www.nasm.us/pub/nasm/releasebuilds/3.01/nasm-3.01.tar.xz")
+  (sha256  "b7324cbe86e767b65f26f467ed8b12ad80e124e3ccb89076855c98e43a9eddd4")
+
+  (binary  "nasm")
+  ; destination directory on the target rootfs
+  (install "/usr/bin")
+
+  (depends)
+
+  (build
+    ; point configure at musl-gcc and request a fully static binary
+    (env "CC"      "musl-gcc")
+    (env "LDFLAGS" "-static")
+
+    (run "./configure"
+         "--prefix=/usr"
+         "--disable-pdf-doc"
+         "--disable-html-doc")
+
+    (make)))
