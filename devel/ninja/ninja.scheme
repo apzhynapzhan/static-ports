@@ -1,0 +1,12 @@
+(package
+  (name "ninja")
+  (version "1.12.1")
+  (category "devel")
+  (description "Small build system with a focus on speed")
+  (source "https://github.com/ninja-build/ninja/archive/refs/tags/v1.12.1.tar.gz")
+  (sha256 "821bdff48a3f683bc4bb3b6f0b5fe7b2d647cf65d52aeb69a6a57f7733d69a38")
+  (binary "ninja")
+  (install "/usr/bin/ninja")
+  (depends "python")
+  (build
+    (run "python3" "configure.py" "--bootstrap")))
