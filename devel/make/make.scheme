@@ -1,0 +1,18 @@
+(package
+  (name "make")
+  (version "4.4.1")
+  (category "base")
+  (description "GNU Make build tool")
+  (source "https://ftp.gnu.org/gnu/make/make-4.4.1.tar.gz")
+  (sha256 "dd16fb1d67bfab79a72f5f8390735f69adae29db7b1f54f3a3ffa64e4c5e0b04")
+  (binary "make")
+  (install "/usr/bin/make")
+  (build
+    (env "CC" "x86_64-linux-musl-gcc")
+    (env "CFLAGS" "-static -Os")
+    (env "LDFLAGS" "-static")
+    (run "./configure"
+         "--host=x86_64-linux-musl"
+         "--prefix=/usr"
+         "--disable-nls")
+    (make)))
