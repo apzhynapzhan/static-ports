@@ -4,7 +4,7 @@
   (category "devel")
   (description "Python programming language interpreter")
   (source "https://www.python.org/ftp/python/3.13.3/Python-3.13.3.tar.xz")
-  (sha256 "")
+  (sha256 "716c1a34beea7ba631e9e2f81bb943fdce58c3dc9bba0ae3ff33ccc73ca49e4e")
   (binary "Python-3.13.3/python")
   (install "/usr/bin/python3")
   (nostrip #f)
